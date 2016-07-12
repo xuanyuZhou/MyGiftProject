@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyGiftProject</string>
+    <string name="guide_text">指南</string>
+    <string name="hot_text">热门</string>
+    <string name="classFiy_text">分类</string>
+    <string name="my_text">我的</string>
+
 </resources>

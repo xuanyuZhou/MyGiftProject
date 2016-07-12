@@ -10,13 +10,12 @@
         android:id="@+id/main_frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-    </FrameLayout>
+        android:layout_weight="1"></FrameLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#000000" />
+        android:background="@color/linerColor" />
 
     <RadioGroup
         android:id="@+id/main_radioGroup"
@@ -29,24 +28,33 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/state_guide"
-            android:button="@null" />
+            android:button="@null"
+            android:drawableTop="@drawable/state_guide"
+            android:gravity="center"
+            android:text="@string/guide_text"
+            android:textColor="@color/radiobutton_text_color" />
 
         <RadioButton
             android:id="@+id/hot_radioButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/state_hot"
-            android:button="@null" />
+            android:button="@null"
+            android:drawableTop="@drawable/state_hot"
+            android:gravity="center"
+            android:text="@string/hot_text"
+            android:textColor="@color/radiobutton_text_color" />
 
         <RadioButton
             android:id="@+id/classify_radioButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/state_classify"
-            android:button="@null" />
+            android:button="@null"
+            android:drawableTop="@drawable/state_classify"
+            android:gravity="center"
+            android:text="@string/classFiy_text"
+            android:textColor="@color/radiobutton_text_color" />
 
         <RadioButton
             android:id="@+id/my_radioButton"
@@ -54,6 +62,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:button="@null"
-            android:background="@drawable/state_my" />
+            android:drawableTop="@drawable/state_my"
+            android:gravity="center"
+            android:text="@string/my_text"
+            android:textColor="@color/radiobutton_text_color" />
     </RadioGroup>
 </LinearLayout>
