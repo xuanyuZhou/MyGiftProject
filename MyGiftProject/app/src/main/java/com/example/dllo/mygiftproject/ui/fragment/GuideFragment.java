@@ -4,6 +4,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.dllo.mygiftproject.R;
 import com.example.dllo.mygiftproject.model.bean.GuideRollTitleBean;
@@ -27,6 +30,8 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
     private GuideFmVpAdapter guideFmVpAdapter;
     private ViewPager guideFmViewpager;
     private TabLayout guideFmTabLayout;
+    // 标题栏第一个图标
+    private ImageView guideTitleOneIv;
 
     @Override
     protected int setLayout() {
@@ -37,20 +42,29 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
     protected void initView() {
         guideFmViewpager = byView(R.id.guideFm_viewPager);
         guideFmTabLayout = byView(R.id.guideFm_tabLayout);
+        guideTitleOneIv = byView(R.id.guide_title_one);
     }
 
     @Override
     protected void initDatas() {
         // 网络获取Tablayout 的title
-        VolleyInstance.getInstance(context).startRequest(rollUrl,this);
+        VolleyInstance.getInstance(context).startStringRequest(rollUrl,this);
         // 初始化viewPager适配器
         fragments = new ArrayList<>();
         rollTitleArray = new ArrayList<>();
+        // 设置guideTitleOneIv设置监听 (指南标题栏第一个图标)
+        guideTitleOneIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "hahaha", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     // 请求成功方法
     @Override
-    public void success(String result) {
+    public void stringSuccess(String result) {
         Gson gson = new Gson();
         // 解析
         GuideRollTitleBean bean = gson.fromJson(result,GuideRollTitleBean.class);
@@ -77,7 +91,7 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
     }
     // 请求失败
     @Override
-    public void failure() {
+    public void stringFailure() {
         Log.d("GuideFragment", "网络请求失败");
     }
 }

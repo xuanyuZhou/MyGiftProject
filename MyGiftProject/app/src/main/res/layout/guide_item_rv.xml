@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
     android:orientation="vertical">
 
-    <include layout="@layout/guide_item_hot" />
-
-    <TextView
+    <ImageView
+        android:id="@+id/guideRv_item_imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="123123123124125123" />
+        android:layout_margin="5dp" />
 </LinearLayout>

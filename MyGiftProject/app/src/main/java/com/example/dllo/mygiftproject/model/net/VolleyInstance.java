@@ -26,7 +26,7 @@ public class VolleyInstance {
     // 对外提供一个获得对象的方法
     public static VolleyInstance getInstance(Context context) {
         if (instance == null) {
-            synchronized (VolleyInstance.class){
+            synchronized (VolleyInstance.class) {
                 if (instance == null) {
                     instance = new VolleyInstance(context);
                 }
@@ -39,9 +39,9 @@ public class VolleyInstance {
     /********************************************************************/
     // 下方 是提供Volley的使用方法
     // 1. 简单方式
-    public void startRequest(String url, Response.Listener<String> listener, Response.ErrorListener errorListener){
+    public void startStringRequest(String url, Response.Listener<String> listener, Response.ErrorListener errorListener) {
         // 开始请求
-        StringRequest sr = new StringRequest(url,listener,errorListener);
+        StringRequest sr = new StringRequest(url, listener, errorListener);
         // 加入队列
         queue.add(sr);
     }
@@ -50,28 +50,27 @@ public class VolleyInstance {
     // 将请求接口利用接口回调响应到调用端
 
     /**
-     * @param url    数据网址
+     * @param url        数据网址
      * @param volleyPort 请求结果(是个接口)
      */
-    public void startRequest(String url, final VolleyPort volleyPort) {
+    public void startStringRequest(String url, final VolleyPort volleyPort) {
         StringRequest sr = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 // 成功方法
-                volleyPort.success(response);
+                volleyPort.stringSuccess(response);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 // 失败方法
-                volleyPort.failure();
+                volleyPort.stringFailure();
             }
         });
         queue.add(sr);
     }
 
-
-
+    // Picasso.with(context).load(url).into(imageview);
 
 
 }

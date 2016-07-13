@@ -3,8 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-<TextView
-    android:text="first"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/rollImg_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bannerHeight" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/guideFirstFm_rv"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <com.example.dllo.mygiftproject.view.MyCustomListView
+                android:id="@+id/guideFirstFm_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
