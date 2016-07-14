@@ -1,12 +1,17 @@
 package com.example.dllo.mygiftproject.model.net;
 
 import android.content.Context;
+import android.widget.ImageView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.dllo.mygiftproject.R;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 /**
  * Created by dllo on 16/7/12.
@@ -70,7 +75,20 @@ public class VolleyInstance {
         queue.add(sr);
     }
 
-    // Picasso.with(context).load(url).into(imageview);
+    // UniversalImageLoader 解析图片方法
+    private static DisplayImageOptions options =
+            new DisplayImageOptions.Builder()
+                    .cacheInMemory(true) // 设置内存缓存
+                    .cacheOnDisk(true)  // 设置硬盘缓存
+                    .showImageForEmptyUri(R.mipmap.ic_launcher) // 设置URL为空时用的图片
+                    .showImageOnFail(R.mipmap.ic_launcher)  // 设置图片加载错误时用的图片
+                    .build();
+
+    public static void loaderImage(String url, ImageView imageView,Context context) {
+        ImageLoaderConfiguration configuration = ImageLoaderConfiguration.createDefault(context);
+        ImageLoader.getInstance().init(configuration);
+        ImageLoader.getInstance().displayImage(url, imageView, options);
+    }
 
 
 }

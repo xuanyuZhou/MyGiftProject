@@ -9,8 +9,8 @@
         android:layout_height="35dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/guideItemLv_TopTvOne"
+        <TextView
+            android:id="@+id/guideItemLv_categoryTv"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_gravity="center_vertical"
@@ -20,7 +20,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/my_list_tv1"
+            android:id="@+id/guideItemLv_shortTitleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -28,7 +28,8 @@
             android:text="数码家"
             android:textSize="14sp" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/guideItemLv_avatarIv"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_gravity="center_vertical"
@@ -36,6 +37,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
+            android:id="@+id/guideItemLv_nickNameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -66,7 +68,7 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:singleLine="true"
-            android:text="我是一行假数据最后要删除" />
+            android:text="我是一行假数据,最后要删除" />
 
 
         <ImageView

@@ -43,6 +43,7 @@ public abstract class AbsBaseActivity extends AppCompatActivity {
     protected void goTo(Context from,Class<? extends AbsBaseActivity> to) {
         Intent intent = new Intent(from,to);
         startActivity(intent);
+        finish();
     }
     // 简化带传值intent跳转
     protected void goTo(Context from,Class<? extends AbsBaseActivity> to,Bundle values) {
