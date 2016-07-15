@@ -4,11 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/hot_item_title" />
-
-    <GridView
-        android:id="@+id/hotFragment_gridView"
-        android:numColumns="2"
+    <ListView
+        android:id="@+id/gdReuseFM_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
+
 </LinearLayout>

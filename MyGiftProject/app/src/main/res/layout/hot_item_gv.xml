@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="250dp"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/hotFmGv_coverImgIv"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:background="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hotFmGv_nameTv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="我是一行假数据,是为了看效果的文字" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/hotFmGv_priceTv"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:text="198.00" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/state_guide_item_likes" />
+
+            <TextView
+                android:id="@+id/hotFmGv_likesCountTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="650058" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
