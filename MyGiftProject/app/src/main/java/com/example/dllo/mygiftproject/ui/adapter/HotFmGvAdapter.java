@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/14.
+ * 热门页fragment的gridView适配器
  */
 public class HotFmGvAdapter extends BaseAdapter {
     private List<LocalHotFmGvBean> datas;

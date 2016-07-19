@@ -2,8 +2,9 @@ package com.example.dllo.mygiftproject.model.bean;
 
 /**
  * Created by dllo on 16/7/12.
+ * 网址常量类
  */
-public class RunnableDocumentBean {
+public final class RunnableDocumentBean {
     // tabLayout的title 的接口
     public static final String TL_TITLE_URL = "http://api.liwushuo.com/v2/channels/preset?gender=2&generation=1";
     // 首页第一个Fragment的banner接口
@@ -43,4 +44,11 @@ public class RunnableDocumentBean {
 
     // 热门页GridView接口
     public static final String HOT_FM_GV_URL = "http://api.liwushuo.com/v2/items?gender=1&limit=20&offset=0&generation=4";
+
+    // 分类页 攻略 上方 分类 外接口
+    public static final String CI_FM_ST_RV_URL = "http://api.liwushuo.com/v2/columns";
+    // 分类页 攻略 下方3个gridView的接口
+    public static final String CI_FM_ST_GV_URL = "http://api.liwushuo.com/v2/channel_groups/all";
+    // 分类页 单品 listView的接口
+    public static final String CI_FM_SINGLE_URL = "http://api.liwushuo.com/v2/item_categories/tree";
 }

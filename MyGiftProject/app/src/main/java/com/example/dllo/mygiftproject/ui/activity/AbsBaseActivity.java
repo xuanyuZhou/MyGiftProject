@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 /**
  * Created by dllo on 16/7/11.
+ * activity基类
  */
 public abstract class AbsBaseActivity extends AppCompatActivity {
     @Override

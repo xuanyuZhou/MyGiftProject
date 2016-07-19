@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/13.
+ * 指南第一个fragment的listView的实体类
  */
 public class GuideFirstLvBean {
 

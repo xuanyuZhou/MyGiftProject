@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/11.
+ * 热门页总fragment
  */
 public class HotFragment extends AbsBaseFragment implements VolleyPort {
     private GridView hotFmGridView;

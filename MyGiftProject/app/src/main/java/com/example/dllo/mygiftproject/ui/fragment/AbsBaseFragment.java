@@ -13,6 +13,7 @@ import com.example.dllo.mygiftproject.ui.activity.AbsBaseActivity;
 
 /**
  * Created by dllo on 16/7/11.
+ * fragment基类
  */
 public abstract class AbsBaseFragment extends Fragment {
     protected Context context;
@@ -63,6 +64,12 @@ public abstract class AbsBaseFragment extends Fragment {
     protected void goTo(Context from, Class<? extends AbsBaseActivity> a) {
         Intent intent = new Intent(from, a);
         from.startActivity(intent);
+    }
+    // 带传值
+    protected  void goTo(Context from, Class<? extends AbsBaseActivity> to, Bundle values){
+        Intent intent = new Intent(from,to);
+        intent.putExtras(values);
+        startActivity(intent);
     }
 
 }

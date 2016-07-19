@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 /**
  * Created by dllo on 16/7/13.
+ * 我的自定义listView 添加了 全部展开 禁止滑动 方法
  */
 public class MyCustomListView extends ListView {
     public MyCustomListView(Context context) {

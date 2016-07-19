@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/13.
+ * 指南第一个fragment RecyclerView横滑的实体类
  */
 public class GuideFirstRvBean {
 

@@ -18,6 +18,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by dllo on 16/7/14.
+ * 指南页复用fragment的listView适配器
  */
 public class GuideReuseFmLvAdapter extends BaseAdapter {
     private List<LocalGuideReuseLvBean> datas;

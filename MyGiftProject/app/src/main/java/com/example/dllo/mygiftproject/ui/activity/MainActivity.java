@@ -10,8 +10,15 @@ import com.example.dllo.mygiftproject.ui.fragment.GuideFragment;
 import com.example.dllo.mygiftproject.ui.fragment.HotFragment;
 import com.example.dllo.mygiftproject.ui.fragment.MyFragment;
 
+/**
+ * 我的MainActivity
+ */
 public class MainActivity extends AbsBaseActivity implements RadioGroup.OnCheckedChangeListener {
     private RadioGroup mainRadioGroup;
+    private GuideFragment guideFragment;
+    private HotFragment hotFragment;
+    private ClassifyFragment classifyFragment;
+    private MyFragment myFragment;
     @Override
     protected int setLayout() {
         return R.layout.activity_main;
@@ -20,6 +27,11 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
     @Override
     protected void initView() {
         mainRadioGroup = byView(R.id.main_radioGroup);
+        // 初始化fragment
+        guideFragment = new GuideFragment();
+        hotFragment = new HotFragment();
+        classifyFragment = new ClassifyFragment();
+        myFragment = new MyFragment();
     }
 
     @Override
@@ -31,6 +43,7 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
     protected void initDatas() {
         // 默认进第一个radioButton
         mainRadioGroup.check(R.id.guide_radioButton);
+
     }
 
     // radioGroup点击事件
@@ -44,17 +57,17 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
             case R.id.guide_radioButton:
                 // 参数1 被替换布局的ID 占位布局
                 // 参数2 被替换的fragment 的对象
-                fragmentTransaction.replace(R.id.main_frameLayout,new GuideFragment());
+                fragmentTransaction.replace(R.id.main_frameLayout,guideFragment);
                 // ******  公司基本上用 hinde(隐藏)和show(显示)来控制fragment的切换
                 break;
             case R.id.hot_radioButton:
-                fragmentTransaction.replace(R.id.main_frameLayout,new HotFragment());
+                fragmentTransaction.replace(R.id.main_frameLayout,hotFragment);
                 break;
             case R.id.classify_radioButton:
-                fragmentTransaction.replace(R.id.main_frameLayout,new ClassifyFragment());
+                fragmentTransaction.replace(R.id.main_frameLayout,classifyFragment);
                 break;
             case R.id.my_radioButton:
-                fragmentTransaction.replace(R.id.main_frameLayout,new MyFragment());
+                fragmentTransaction.replace(R.id.main_frameLayout,myFragment);
                 break;
             default:
                 break;

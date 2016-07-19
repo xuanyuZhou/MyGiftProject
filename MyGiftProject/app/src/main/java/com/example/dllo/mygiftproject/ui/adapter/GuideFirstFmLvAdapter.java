@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/13.
+ * 指南页第一个fragment的listView适配器
  */
 public class GuideFirstFmLvAdapter extends BaseAdapter {
     private List<LocalGuideFirstLvBean> datas;

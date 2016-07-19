@@ -15,6 +15,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 /**
  * Created by dllo on 16/7/12.
+ * 单例类 内部有一些工具
  */
 public class VolleyInstance {
     // 定义一个请求队列
@@ -80,8 +81,8 @@ public class VolleyInstance {
             new DisplayImageOptions.Builder()
                     .cacheInMemory(true) // 设置内存缓存
                     .cacheOnDisk(true)  // 设置硬盘缓存
-                    .showImageForEmptyUri(R.mipmap.ic_launcher) // 设置URL为空时用的图片
-                    .showImageOnFail(R.mipmap.ic_launcher)  // 设置图片加载错误时用的图片
+                    .showImageForEmptyUri(R.mipmap.icon_progress_bar_refresh) // 设置URL为空时用的图片
+                    .showImageOnFail(R.mipmap.icon_progress_bar_refresh)  // 设置图片加载错误时用的图片
                     .build();
 
     public static void loaderImage(String url, ImageView imageView,Context context) {

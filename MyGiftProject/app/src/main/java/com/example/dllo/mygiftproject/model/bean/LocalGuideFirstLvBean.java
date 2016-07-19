@@ -2,6 +2,7 @@ package com.example.dllo.mygiftproject.model.bean;
 
 /**
  * Created by dllo on 16/7/13.
+ * 指南第一个fragment listView本地实体类
  */
 public class LocalGuideFirstLvBean {
     String title, likesCount, imageUrl;

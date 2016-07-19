@@ -4,12 +4,13 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/12.
+ * 装banner获取到数据的类
  */
 public class BannerBean {
 
     /**
      * code : 200
-     * data : {"banners":[{"ad_monitors":[],"channel":"all","id":651,"image_url":"http://img02.liwushuo.com/image/160712/oiqevjbck.jpg-w720","order":1100,"status":0,"target_id":1044509,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=post&post_id=1044509","type":"post","webp_url":"http://img02.liwushuo.com/image/160712/oiqevjbck.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":648,"image_url":"http://img01.liwushuo.com/image/160704/323sc87iy.jpg-w720","order":120,"status":0,"target":{"banner_image_url":"http://img02.liwushuo.com/image/160704/12d45nlvl.jpg-w300","banner_webp_url":"http://img02.liwushuo.com/image/160704/12d45nlvl.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img03.liwushuo.com/image/160704/r6ifiv8hn.jpg-w720","cover_webp_url":"http://img03.liwushuo.com/image/160704/r6ifiv8hn.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1467622112,"id":326,"posts_count":8,"status":1,"subtitle":"少女心彩妆","title":"貌美彩妆来袭，少女心狙击BiuBiuBiu","updated_at":1467622180},"target_id":326,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=326","type":"collection","webp_url":"http://img01.liwushuo.com/image/160704/323sc87iy.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":640,"image_url":"http://img02.liwushuo.com/image/160624/n4ynnar4r.jpg-w720","order":118,"status":0,"target":{"banner_image_url":"http://img01.liwushuo.com/image/160513/4m3a7gr3h.jpg-w300","banner_webp_url":"http://img01.liwushuo.com/image/160513/4m3a7gr3h.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img01.liwushuo.com/image/160513/q8sq2pv5y.jpg-w720","cover_webp_url":"http://img01.liwushuo.com/image/160513/q8sq2pv5y.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1463140550,"id":281,"posts_count":12,"status":1,"subtitle":"防晒有道","title":"不想被\u201c黑\u201d，做好防晒才是正经事","updated_at":1467012462},"target_id":281,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=281","type":"collection","webp_url":"http://img02.liwushuo.com/image/160624/n4ynnar4r.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":653,"image_url":"http://img01.liwushuo.com/image/160711/pjcin0zce.jpg-w720","order":115,"status":0,"target_id":null,"target_type":"url","target_url":"liwushuo:///page?url=http%3A%2F%2Fs.click.taobao.com%2Ft%3Fe%3Dm%253D2%2526s%253DcpogY7ctt6wcQipKwQzePCperVdZeJviLKpWJ%252Bin0XJRAdhuF14FMdDYXNt8Zwz7MMgx22UI05atgmtnxDX9deVMA5qBABUs5mPg1WiM1P4MBAVv20wDILg5kJpUiIWcbYbSbVjnPd6R4ypTBJBwtPIcvT56TvpnKVffChNb96kj5Wjhls5eJK8m%252FAYRPrsOGGZFJNe5sQRWa6ntWQdrxoQTTnG0ArxTiWkMkjeC%252FpbrKJjBB842gA%253D%253D&page_action=navigation&login=false&type=url","type":"url","webp_url":"http://img01.liwushuo.com/image/160711/pjcin0zce.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":641,"image_url":"http://img02.liwushuo.com/image/160624/rfutnj8l0.jpg-w720","order":113,"status":0,"target":{"banner_image_url":"http://img02.liwushuo.com/image/160624/1fcbha8yr.jpg-w300","banner_webp_url":"http://img02.liwushuo.com/image/160624/1fcbha8yr.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img03.liwushuo.com/image/160624/0bsd3db8f.jpg-w720","cover_webp_url":"http://img03.liwushuo.com/image/160624/0bsd3db8f.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1466734797,"id":320,"posts_count":7,"status":1,"subtitle":"你没有的安全感，让爱的礼物来给","title":"巨蟹座生日礼物","updated_at":1466734936},"target_id":320,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=320","type":"collection","webp_url":"http://img02.liwushuo.com/image/160624/rfutnj8l0.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":646,"image_url":"http://img03.liwushuo.com/image/160704/nb1xtjrx7.jpg-w720","order":112,"status":0,"target":{"banner_image_url":"http://img03.liwushuo.com/image/160704/38tkkwbar.jpg-w300","banner_webp_url":"http://img03.liwushuo.com/image/160704/38tkkwbar.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img03.liwushuo.com/image/160704/hurechc1p.jpg-w720","cover_webp_url":"http://img03.liwushuo.com/image/160704/hurechc1p.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1467621185,"id":324,"posts_count":6,"status":1,"subtitle":"生活必备神器","title":"生活神器，解放你的双手","updated_at":1467621499},"target_id":324,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=324","type":"collection","webp_url":"http://img03.liwushuo.com/image/160704/nb1xtjrx7.jpg?imageView2/2/w/720/q/85/format/webp"}]}
+     * data : {"banners":[{"ad_monitors":[],"channel":"all","id":655,"image_url":"http://img01.liwushuo.com/image/160713/11y8ugwh3.jpg-w720","order":124,"status":0,"target":{"banner_image_url":"http://img03.liwushuo.com/image/160713/aayyc5gsm.jpg-w300","banner_webp_url":"http://img03.liwushuo.com/image/160713/aayyc5gsm.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img03.liwushuo.com/image/160713/epr2b1m6f.jpg-w720","cover_webp_url":"http://img03.liwushuo.com/image/160713/epr2b1m6f.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1468389283,"id":328,"posts_count":7,"status":1,"subtitle":"夏天就是时刻装\u201c裤\u201d  ","title":"夏季必备裤装","updated_at":1468389454},"target_id":328,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=328","type":"collection","webp_url":"http://img01.liwushuo.com/image/160713/11y8ugwh3.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":661,"image_url":"http://img02.liwushuo.com/image/160716/ogoufvbjn.jpg-w720","order":123,"status":0,"target":{"banner_image_url":"http://img03.liwushuo.com/image/160716/aa61abwyl.jpg-w300","banner_webp_url":"http://img03.liwushuo.com/image/160716/aa61abwyl.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img03.liwushuo.com/image/160716/m5h75bnv0.jpg-w720","cover_webp_url":"http://img03.liwushuo.com/image/160716/m5h75bnv0.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1468599006,"id":334,"posts_count":4,"status":1,"subtitle":"100件生活神器","title":"有了这100件生活神器，方便到开挂 ","updated_at":1468599057},"target_id":334,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=334","type":"collection","webp_url":"http://img02.liwushuo.com/image/160716/ogoufvbjn.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":647,"image_url":"http://img03.liwushuo.com/image/160704/kfa8zx488.jpg-w720","order":121,"status":0,"target":{"banner_image_url":"http://img01.liwushuo.com/image/160704/4rlfbwpkp.jpg-w300","banner_webp_url":"http://img01.liwushuo.com/image/160704/4rlfbwpkp.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img01.liwushuo.com/image/160704/fh5caaslf.jpg-w720","cover_webp_url":"http://img01.liwushuo.com/image/160704/fh5caaslf.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1467621563,"id":325,"posts_count":6,"status":1,"subtitle":"夏日手机壳","title":"夏日换装大作战，手机组开赛","updated_at":1467621629},"target_id":325,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=325","type":"collection","webp_url":"http://img03.liwushuo.com/image/160704/kfa8zx488.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":640,"image_url":"http://img03.liwushuo.com/image/160624/n4ynnar4r.jpg-w720","order":118,"status":0,"target":{"banner_image_url":"http://img01.liwushuo.com/image/160513/4m3a7gr3h.jpg-w300","banner_webp_url":"http://img01.liwushuo.com/image/160513/4m3a7gr3h.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img02.liwushuo.com/image/160513/q8sq2pv5y.jpg-w720","cover_webp_url":"http://img02.liwushuo.com/image/160513/q8sq2pv5y.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1463140550,"id":281,"posts_count":12,"status":1,"subtitle":"防晒有道","title":"不想被\u201c黑\u201d，做好防晒才是正经事","updated_at":1467012462},"target_id":281,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=281","type":"collection","webp_url":"http://img03.liwushuo.com/image/160624/n4ynnar4r.jpg?imageView2/2/w/720/q/85/format/webp"},{"ad_monitors":[],"channel":"all","id":641,"image_url":"http://img02.liwushuo.com/image/160624/rfutnj8l0.jpg-w720","order":113,"status":0,"target":{"banner_image_url":"http://img03.liwushuo.com/image/160624/1fcbha8yr.jpg-w300","banner_webp_url":"http://img03.liwushuo.com/image/160624/1fcbha8yr.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img01.liwushuo.com/image/160624/0bsd3db8f.jpg-w720","cover_webp_url":"http://img01.liwushuo.com/image/160624/0bsd3db8f.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1466734797,"id":320,"posts_count":7,"status":1,"subtitle":"你没有的安全感，让爱的礼物来给","title":"巨蟹座生日礼物","updated_at":1466734936},"target_id":320,"target_type":"url","target_url":"liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=320","type":"collection","webp_url":"http://img02.liwushuo.com/image/160624/rfutnj8l0.jpg?imageView2/2/w/720/q/85/format/webp"}]}
      * message : OK
      */
 
@@ -45,15 +46,16 @@ public class BannerBean {
         /**
          * ad_monitors : []
          * channel : all
-         * id : 651
-         * image_url : http://img02.liwushuo.com/image/160712/oiqevjbck.jpg-w720
-         * order : 1100
+         * id : 655
+         * image_url : http://img01.liwushuo.com/image/160713/11y8ugwh3.jpg-w720
+         * order : 124
          * status : 0
-         * target_id : 1044509
+         * target : {"banner_image_url":"http://img03.liwushuo.com/image/160713/aayyc5gsm.jpg-w300","banner_webp_url":"http://img03.liwushuo.com/image/160713/aayyc5gsm.jpg?imageView2/2/w/300/q/85/format/webp","cover_image_url":"http://img03.liwushuo.com/image/160713/epr2b1m6f.jpg-w720","cover_webp_url":"http://img03.liwushuo.com/image/160713/epr2b1m6f.jpg?imageView2/2/w/720/q/85/format/webp","created_at":1468389283,"id":328,"posts_count":7,"status":1,"subtitle":"夏天就是时刻装\u201c裤\u201d  ","title":"夏季必备裤装","updated_at":1468389454}
+         * target_id : 328
          * target_type : url
-         * target_url : liwushuo:///page?page_action=navigation&login=false&type=post&post_id=1044509
-         * type : post
-         * webp_url : http://img02.liwushuo.com/image/160712/oiqevjbck.jpg?imageView2/2/w/720/q/85/format/webp
+         * target_url : liwushuo:///page?page_action=navigation&login=false&type=topic&topic_id=328
+         * type : collection
+         * webp_url : http://img01.liwushuo.com/image/160713/11y8ugwh3.jpg?imageView2/2/w/720/q/85/format/webp
          */
 
         private List<BannersBean> banners;
@@ -72,6 +74,21 @@ public class BannerBean {
             private String image_url;
             private int order;
             private int status;
+            /**
+             * banner_image_url : http://img03.liwushuo.com/image/160713/aayyc5gsm.jpg-w300
+             * banner_webp_url : http://img03.liwushuo.com/image/160713/aayyc5gsm.jpg?imageView2/2/w/300/q/85/format/webp
+             * cover_image_url : http://img03.liwushuo.com/image/160713/epr2b1m6f.jpg-w720
+             * cover_webp_url : http://img03.liwushuo.com/image/160713/epr2b1m6f.jpg?imageView2/2/w/720/q/85/format/webp
+             * created_at : 1468389283
+             * id : 328
+             * posts_count : 7
+             * status : 1
+             * subtitle : 夏天就是时刻装“裤”
+             * title : 夏季必备裤装
+             * updated_at : 1468389454
+             */
+
+            private TargetBean target;
             private int target_id;
             private String target_type;
             private String target_url;
@@ -117,6 +134,14 @@ public class BannerBean {
 
             public void setStatus(int status) {
                 this.status = status;
+            }
+
+            public TargetBean getTarget() {
+                return target;
+            }
+
+            public void setTarget(TargetBean target) {
+                this.target = target;
             }
 
             public int getTarget_id() {
@@ -165,6 +190,108 @@ public class BannerBean {
 
             public void setAd_monitors(List<?> ad_monitors) {
                 this.ad_monitors = ad_monitors;
+            }
+
+            public static class TargetBean {
+                private String banner_image_url;
+                private String banner_webp_url;
+                private String cover_image_url;
+                private String cover_webp_url;
+                private int created_at;
+                private int id;
+                private int posts_count;
+                private int status;
+                private String subtitle;
+                private String title;
+                private int updated_at;
+
+                public String getBanner_image_url() {
+                    return banner_image_url;
+                }
+
+                public void setBanner_image_url(String banner_image_url) {
+                    this.banner_image_url = banner_image_url;
+                }
+
+                public String getBanner_webp_url() {
+                    return banner_webp_url;
+                }
+
+                public void setBanner_webp_url(String banner_webp_url) {
+                    this.banner_webp_url = banner_webp_url;
+                }
+
+                public String getCover_image_url() {
+                    return cover_image_url;
+                }
+
+                public void setCover_image_url(String cover_image_url) {
+                    this.cover_image_url = cover_image_url;
+                }
+
+                public String getCover_webp_url() {
+                    return cover_webp_url;
+                }
+
+                public void setCover_webp_url(String cover_webp_url) {
+                    this.cover_webp_url = cover_webp_url;
+                }
+
+                public int getCreated_at() {
+                    return created_at;
+                }
+
+                public void setCreated_at(int created_at) {
+                    this.created_at = created_at;
+                }
+
+                public int getId() {
+                    return id;
+                }
+
+                public void setId(int id) {
+                    this.id = id;
+                }
+
+                public int getPosts_count() {
+                    return posts_count;
+                }
+
+                public void setPosts_count(int posts_count) {
+                    this.posts_count = posts_count;
+                }
+
+                public int getStatus() {
+                    return status;
+                }
+
+                public void setStatus(int status) {
+                    this.status = status;
+                }
+
+                public String getSubtitle() {
+                    return subtitle;
+                }
+
+                public void setSubtitle(String subtitle) {
+                    this.subtitle = subtitle;
+                }
+
+                public String getTitle() {
+                    return title;
+                }
+
+                public void setTitle(String title) {
+                    this.title = title;
+                }
+
+                public int getUpdated_at() {
+                    return updated_at;
+                }
+
+                public void setUpdated_at(int updated_at) {
+                    this.updated_at = updated_at;
+                }
             }
         }
     }

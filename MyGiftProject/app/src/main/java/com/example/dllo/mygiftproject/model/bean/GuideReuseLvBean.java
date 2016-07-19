@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/14.
+ * 指南复用fragmentlistView的数据实体类
  */
 public class GuideReuseLvBean {
 

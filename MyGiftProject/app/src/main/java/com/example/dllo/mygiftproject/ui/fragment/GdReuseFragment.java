@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/12.
+ * 指南页复用fragment
  */
 public class GdReuseFragment extends AbsBaseFragment implements VolleyPort {
     // 初始化URL

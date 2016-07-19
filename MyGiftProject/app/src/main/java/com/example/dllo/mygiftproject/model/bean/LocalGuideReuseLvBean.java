@@ -2,6 +2,7 @@ package com.example.dllo.mygiftproject.model.bean;
 
 /**
  * Created by dllo on 16/7/14.
+ * 指南复用fragment listView本地实体类
  */
 public class LocalGuideReuseLvBean {
     String likesCount, nickName, category, title, shortTitle, imageUrl, avatarUrl;

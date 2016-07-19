@@ -6,6 +6,7 @@ import com.example.dllo.mygiftproject.R;
 
 /**
  * Created by dllo on 16/7/13.
+ * 登录页activity
  */
 public class LoginActivity extends AbsBaseActivity implements View.OnClickListener {
     private ImageButton loginCloseBtn;

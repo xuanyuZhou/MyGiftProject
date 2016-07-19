@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dllo on 16/7/12.
+ * 指南上方tabLayout数据获取实体类
  */
 public class GuideRollTitleBean {
 

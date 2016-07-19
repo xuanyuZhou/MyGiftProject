@@ -1,9 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:text="12314443423423"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp"
+        android:background="@mipmap/bg_profile">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@mipmap/icon_message" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/imageButton_setting"
+                android:layout_toLeftOf="@+id/imageButton_setting"
+                android:background="@mipmap/icon_scan" />
+
+            <ImageButton
+                android:id="@+id/imageButton_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dp"
+                android:background="@mipmap/me_settings" />
+
+        </RelativeLayout>
+        <ImageButton
+            android:id="@+id/ib_mine_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/me_avatar_girl" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ib_mine_icon"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:text="未登录"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+        <ImageButton
+            android:id="@+id/ib_mine_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_cart"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="50dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="购物车"
+            android:layout_below="@+id/ib_mine_cart"
+            android:layout_marginLeft="50dp"/>
+        <ImageButton
+            android:id="@+id/ib_mine_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_order"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ib_mine_cart"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单"
+            android:layout_below="@+id/ib_mine_order"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ib_mine_cart"/>
+        <ImageButton
+            android:id="@+id/ib_mine_coupn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_coupon"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ib_mine_order"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="礼券"
+            android:layout_below="@+id/ib_mine_coupn"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ib_mine_order"/>
+        <ImageButton
+            android:id="@+id/ib_mine_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_service"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ib_mine_coupn"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客服"
+            android:layout_below="@+id/ib_mine_service"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ib_mine_coupn"/>
+    </RelativeLayout>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_mine"
+        >
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="单品"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:drawableBottom="#FF3E96"/>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            />
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="攻略"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@android:color/white">
+        <ImageButton
+            android:id="@+id/ib_mine_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/fav_me_blank"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="喜欢的都放这里哦"
+            android:layout_below="@+id/ib_mine_favorite"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+    </LinearLayout>
+
 </LinearLayout>

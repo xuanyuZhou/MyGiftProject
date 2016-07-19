@@ -6,4 +6,5 @@
     <dimen name="titleHeight">50dp</dimen>
     <dimen name="tabLayoutHeight">44dp</dimen>
     <dimen name="title_textSize">20sp</dimen>
+    <dimen name="radioButtonTextSize">10sp</dimen>
 </resources>

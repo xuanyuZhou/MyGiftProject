@@ -1,92 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="225dp"
+    android:layout_height="235dp"
+    android:background="@android:color/transparent"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/guideItemLv_categoryTv"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/state_guide_lvitem_text"
-            android:text="数码"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="14sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
 
-        <TextView
-            android:id="@+id/guideItemLv_shortTitleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:text="数码家"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/guideItemLv_categoryTv"
+                android:layout_width="30dp"
+                android:layout_height="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/guideItemLv_nickNameTv"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/state_guide_lvitem_text"
+                android:gravity="center"
+                android:text="数码"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="10sp" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/guideItemLv_avatarIv"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="120dp"
-            android:src="@mipmap/ic_launcher" />
+            <TextView
+                android:id="@+id/guideItemLv_shortTitleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/guideItemLv_categoryTv"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/guideItemLv_categoryTv"
+                android:text="数码家"
+                android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/guideItemLv_nickNameTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="5dp"
-            android:text="黑科技调查"
-            android:textSize="14sp" />
-    </LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/guideItemLv_avatarIv"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toStartOf="@+id/guideItemLv_nickNameTv"
+                android:src="@mipmap/ic_launcher" />
 
-    <ImageView
-        android:id="@+id/guideItemLv_contentImageView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:src="@mipmap/ic_launcher" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/guideItemLv_title"
-            android:layout_width="270dp"
-            android:layout_height="match_parent"
-            android:layout_alignBottom="@+id/imageView"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="5dp"
-            android:ellipsize="end"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:text="我是一行假数据,最后要删除" />
-
+            <TextView
+                android:id="@+id/guideItemLv_nickNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:text="黑科技调查"
+                android:textSize="12sp" />
+        </RelativeLayout>
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/state_guide_item_likes" />
+            android:id="@+id/guideItemLv_contentImageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
 
-        <TextView
-            android:id="@+id/guideItemLv_likesCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="123456" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/guideItemLv_title"
+                android:layout_width="270dp"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/imageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/lvTitleTextColor"
+                android:text="我是一行假数据,最后要删除"
+                android:textSize="13sp" />
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/state_guide_item_likes" />
+
+            <TextView
+                android:id="@+id/guideItemLv_likesCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/lvTitleTextColor"
+                android:text="123456" />
+
+        </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.dllo.mygiftproject.model.bean;
 
 /**
  * Created by dllo on 16/7/14.
+ * 热门fragment内gridView本地实体类
  */
 public class LocalHotFmGvBean {
     String name, likesCount, imageUrl, price;
