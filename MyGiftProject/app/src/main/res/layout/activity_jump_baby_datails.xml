@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_red_light">
+
+        <ImageView
+            android:id="@+id/babyDatails_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_marginStart="24dp"
+            android:background="@mipmap/ic_action_back" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="100dp"
+            android:gravity="center"
+            android:text="宝贝详情"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/babyDatails_likes"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/baichuan_btn_favorites"
+            android:layout_alignTop="@+id/babyDatails_word"
+            android:layout_toStartOf="@+id/babyDatails_word" />
+
+        <ImageView
+            android:id="@+id/babyDatails_word"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/babyDatails_share"
+            android:background="@mipmap/baichuan_btn_comments" />
+
+        <ImageView
+            android:id="@+id/babyDatails_share"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/baichuan_btn_share" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/babyDatails_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+</LinearLayout>

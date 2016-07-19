@@ -3,8 +3,8 @@ package com.example.dllo.mygiftproject.ui.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -12,10 +12,10 @@ import com.example.dllo.mygiftproject.R;
 import com.example.dllo.mygiftproject.model.bean.BannerBean;
 import com.example.dllo.mygiftproject.model.bean.GuideFirstLvBean;
 import com.example.dllo.mygiftproject.model.bean.GuideFirstRvBean;
-import com.example.dllo.mygiftproject.model.bean.LocalGuideFirstLvBean;
 import com.example.dllo.mygiftproject.model.bean.RunnableDocumentBean;
 import com.example.dllo.mygiftproject.model.net.VolleyInstance;
 import com.example.dllo.mygiftproject.model.net.VolleyPort;
+import com.example.dllo.mygiftproject.ui.activity.JumpWebActivity;
 import com.example.dllo.mygiftproject.ui.activity.SecondaryJumpActivity;
 import com.example.dllo.mygiftproject.ui.adapter.GdFmRvOnclick;
 import com.example.dllo.mygiftproject.ui.adapter.GuideFirstFmLvAdapter;
@@ -23,19 +23,17 @@ import com.example.dllo.mygiftproject.ui.adapter.GuideFirstFmRvAdapter;
 import com.google.gson.Gson;
 import com.youth.banner.Banner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by dllo on 16/7/12.
  * 指南页第一个Fragment
  */
-public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Banner.OnBannerClickListener, GdFmRvOnclick {
+public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Banner.OnBannerClickListener, GdFmRvOnclick, AdapterView.OnItemClickListener {
     // banner相关初始化
     private Banner rollImgBanner;// banner对象
     private String[] imageUrls;//图片的url
     private String[] bannerJupUrls;// banner点击跳转的url
-    private List<String> titles;// banner点击条换的activity上方标题栏的标题
     // rv相关初始化
     private String bannerUrl = RunnableDocumentBean.GD_BANNER_URL; // 初始化banner接口
     private String rvUrl = RunnableDocumentBean.GD_FIRST_RV_URL;// 初始化recyclerView接口
@@ -45,11 +43,11 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
     private RecyclerView guideFirstFmRv;
     // lv相关初始化
     private String lvUrl = RunnableDocumentBean.GD_FIRST_LV_URL; // 初始化listView接口
-    private List<LocalGuideFirstLvBean> lvBeanArray; // 装类的集合
     private GuideFirstFmLvAdapter guideFirstFmLvAdapter; // 初始化适配器
     private ListView guideFirstFmLv; // 初始化listView
     // 初始化gson
     private Gson gson;
+    private GuideFirstLvBean lvBean;
     //
 
 
@@ -72,6 +70,8 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
         VolleyInstance.getInstance(context).startStringRequest(bannerUrl, this);
         // banner的监听事件
         rollImgBanner.setOnBannerClickListener(this);
+        // 给listView设置点击事件
+        guideFirstFmLv.setOnItemClickListener(this);
 
     }
 
@@ -100,13 +100,11 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
                 // 初始化数组 加入数据
                 imageUrls = new String[datas.size()];
                 bannerJupUrls = new String[datas.size()];
-                titles = new ArrayList<>();
                 for (int i = 0; i < datas.size(); i++) {
                     imageUrls[i] = datas.get(i).getImage_url();
                     bannerJupUrls[i] = "http://api.liwushuo.com/v2/collections/"
                             + String.valueOf(datas.get(i).getTarget_id())
                             + "/posts?gender=1&generation=2&limit=20&offset=0";
-                    // titles.add(bean.getData().getBanners().get(i).getTarget().getTitle());
                 }
                 // 显示banner
                 showBanner();
@@ -116,15 +114,9 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
                 break;
             case 1:
                 GuideFirstRvBean rvBean = gson.fromJson(result, GuideFirstRvBean.class);
-                List<GuideFirstRvBean.DataBean.SecondaryBannersBean> rvData = rvBean.getData().getSecondary_banners();
-                rvUrlsArray = new ArrayList<>();
-                for (int i = 0; i < rvData.size(); i++) {
-                    String url = rvData.get(i).getImage_url();
-                    rvUrlsArray.add(url);
-                }
                 // 初始化适配器 绑定适配器 传数据
                 guideFirstFmRvAdapter = new GuideFirstFmRvAdapter(context);
-                guideFirstFmRvAdapter.setImageUrls(rvUrlsArray);
+                guideFirstFmRvAdapter.setRvBean(rvBean);
                 guideFirstFmRv.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
                 guideFirstFmRv.setAdapter(guideFirstFmRvAdapter);
                 // 调用适配器内接口
@@ -136,19 +128,10 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
             case 2:
                 // 解析listView所需要的数据
                 gson = new Gson();
-                GuideFirstLvBean lvBean = gson.fromJson(result, GuideFirstLvBean.class);
-                List<GuideFirstLvBean.DataBean.ItemsBean> lvData = lvBean.getData().getItems();
-                lvBeanArray = new ArrayList<>();
-                for (int i = 0; i < lvData.size(); i++) {
-                    LocalGuideFirstLvBean localGuideFirstLvBean = new LocalGuideFirstLvBean();
-                    localGuideFirstLvBean.setImageUrl(lvData.get(i).getCover_image_url())
-                            .setTitle(lvData.get(i).getTitle()) // 此处将今天类型的likeCount强转成String类型放入实体类
-                            .setLikesCount(String.valueOf(lvData.get(i).getLikes_count()));
-                    lvBeanArray.add(localGuideFirstLvBean);
-                }
+                lvBean = gson.fromJson(result, GuideFirstLvBean.class);
                 // 初始化适配器  set方法传数据  lv绑定适配器
                 guideFirstFmLvAdapter = new GuideFirstFmLvAdapter(context);
-                guideFirstFmLvAdapter.setDatas(lvBeanArray);
+                guideFirstFmLvAdapter.setDatas(lvBean);
                 guideFirstFmLv.setAdapter(guideFirstFmLvAdapter);
                 break;
         }
@@ -169,15 +152,27 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
     public void OnBannerClick(View view, int position) {
         Bundle bundle = new Bundle();
         String url = bannerJupUrls[position];
-        Log.d("GdFirstFragment", url);
         bundle.putString("url",url);
         goTo(context, SecondaryJumpActivity.class,bundle);
-        Toast.makeText(context, "点击的是第" + position + "张图片", Toast.LENGTH_SHORT).show();
     }
 
     // rv 回调监听事件
     @Override
     public void onClickListener(int position) {
         Toast.makeText(context, "你点击的是第" + position + "张图片", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * listView 点击实现的接口回调的方法
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Bundle bundle = new Bundle();
+        bundle.putString("url",lvBean.getData().getItems().get(position).getUrl());
+        goTo(context, JumpWebActivity.class,bundle);
     }
 }

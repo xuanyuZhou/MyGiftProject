@@ -9,36 +9,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.mygiftproject.R;
-import com.example.dllo.mygiftproject.model.bean.LocalGuideFirstLvBean;
+import com.example.dllo.mygiftproject.model.bean.GuideFirstLvBean;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 /**
  * Created by dllo on 16/7/13.
  * 指南页第一个fragment的listView适配器
  */
 public class GuideFirstFmLvAdapter extends BaseAdapter {
-    private List<LocalGuideFirstLvBean> datas;
+    private GuideFirstLvBean datas;
     private Context context;
 
     public GuideFirstFmLvAdapter(Context context) {
         this.context = context;
     }
 
-    public void setDatas(List<LocalGuideFirstLvBean> datas) {
+    public void setDatas(GuideFirstLvBean datas) {
         this.datas = datas;
         notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return datas != null ? datas.size() : 0;
+        return datas != null ? datas.getData().getItems().size() : 0;
     }
 
     @Override
     public Object getItem(int position) {
-        return datas != null ? datas.get(position) : null;
+        return datas != null ? datas.getData().getItems().get(position) : null;
     }
 
     @Override
@@ -56,10 +54,9 @@ public class GuideFirstFmLvAdapter extends BaseAdapter {
         } else {
             lvHolder = (GuideFirstFmLvHolder) convertView.getTag();
         }
-        LocalGuideFirstLvBean lvBean = datas.get(position);
-        lvHolder.titleTv.setText(lvBean.getTitle());
-        lvHolder.likesCountTv.setText(lvBean.getLikesCount());
-        Picasso.with(context).load(lvBean.getImageUrl()).into(lvHolder.covertIv);
+        lvHolder.titleTv.setText(datas.getData().getItems().get(position).getTitle());
+        lvHolder.likesCountTv.setText(String.valueOf(datas.getData().getItems().get(position).getLikes_count()));
+        Picasso.with(context).load(datas.getData().getItems().get(position).getCover_image_url()).into(lvHolder.covertIv);
         return convertView;
     }
     class GuideFirstFmLvHolder {
