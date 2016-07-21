@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
     private Gson gson;
     private GuideFirstLvBean lvBean;
     //
+    private ImageView heart;
 
 
     @Override
@@ -61,6 +63,7 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
         rollImgBanner = byView(R.id.rollImg_banner);
         guideFirstFmRv = byView(R.id.guideFirstFm_rv);
         guideFirstFmLv = byView(R.id.guideFirstFm_lv);
+
     }
 
     @Override
@@ -72,6 +75,7 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
         rollImgBanner.setOnBannerClickListener(this);
         // 给listView设置点击事件
         guideFirstFmLv.setOnItemClickListener(this);
+
 
     }
 

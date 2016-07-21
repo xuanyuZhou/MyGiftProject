@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+        <!--站位-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <ImageView
+            android:id="@+id/classifyActivity_lvItem_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/classifyActivity_lvItem_title"
+                android:layout_width="270dp"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/imageView"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="我是一行假数据,最后要删除"
+                android:textColor="@color/lvTitleTextColor"
+                android:textSize="13sp" />
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/state_guide_item_likes" />
+
+            <TextView
+                android:id="@+id/classifyActivity_lvItem_likesCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="123456"
+                android:textColor="@color/lvTitleTextColor" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

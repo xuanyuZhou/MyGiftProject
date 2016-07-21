@@ -1,14 +1,18 @@
 package com.example.dllo.mygiftproject.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.dllo.mygiftproject.R;
 import com.example.dllo.mygiftproject.model.bean.CiFmSingleLvBean;
+import com.example.dllo.mygiftproject.ui.activity.SingleJumpActivity;
 import com.example.dllo.mygiftproject.view.MyCustomGridView;
 
 import java.util.List;
@@ -48,6 +52,7 @@ public class CiSingleRightLvAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        final int pos = position;
         RightLvHolder lvHolder = null;
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.classify_single_right_lv_item, parent, false);
@@ -60,6 +65,20 @@ public class CiSingleRightLvAdapter extends BaseAdapter {
         CiSingleGvAdapter gvAdapter = new CiSingleGvAdapter(context);
         gvAdapter.setDatas(datas.get(position).getSubcategories());
         lvHolder.myCustomGridView.setAdapter(gvAdapter);
+        // gridView的内部监听  跳转
+        lvHolder.myCustomGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle bundle = new Bundle();
+                bundle.putString("url", "http://api.liwushuo.com/v2/item_subcategories/"
+                        + String.valueOf(datas.get(pos).getSubcategories().get(position).getId())
+                        + "/items?limit=20&offset=0");
+                bundle.putString("title",datas.get(pos).getSubcategories().get(position).getName());
+                Intent intent = new Intent(context, SingleJumpActivity.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
         return convertView;
     }
 
@@ -67,6 +86,7 @@ public class CiSingleRightLvAdapter extends BaseAdapter {
     class RightLvHolder {
         private TextView rightLvTitleTv;
         MyCustomGridView myCustomGridView;
+
         public RightLvHolder(View view) {
             rightLvTitleTv = (TextView) view.findViewById(R.id.right_lvTitleTv);
 

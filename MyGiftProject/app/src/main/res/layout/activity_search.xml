@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_red_light">
+
+        <ImageView
+            android:id="@+id/searchActivity_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/menu_action_back" />
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchActivity_searchView"
+            android:layout_width="260dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/state_hot_gv_bg"
+            android:queryHint="@string/searchEditText"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/searchActivity_goSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:text="搜索"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/searchActivity_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="大家都在搜" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#cecece" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rowCount="3">
+
+                    <TextView
+                        android:id="@+id/searchActivity_textOne"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   零食   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textTwo"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   双肩包   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textThree"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   文具   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textFour"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   手机壳   " />
+
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rowCount="3">
+
+                    <TextView
+                        android:id="@+id/searchActivity_textFive"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   宿舍   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textSix"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   情侣   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textSeven"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   手表   " />
+
+
+                    <TextView
+                        android:id="@+id/searchActivity_textEight"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   钱包   " />
+
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:rowCount="3">
+
+                    <TextView
+                        android:id="@+id/searchActivity_textNight"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   杯子   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textTen"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   手链   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textEleven"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   泳衣   " />
+
+                    <TextView
+                        android:id="@+id/searchActivity_textTwelve"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/search_state"
+                        android:padding="5dp"
+                        android:text="   连衣裙   " />
+
+
+                </GridLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#cecece" />
+
+            <TextView
+                android:id="@+id/searchActivity_textXlsq"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:drawableLeft="@mipmap/gift_category_guide"
+                android:drawableRight="@mipmap/arrow_right"
+                android:gravity="center_vertical"
+                android:text="        使用选礼神器快速挑选礼物" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cecece" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

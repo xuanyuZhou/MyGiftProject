@@ -26,7 +26,8 @@
             <com.example.dllo.mygiftproject.view.MyCustomListView
                 android:id="@+id/guideFirstFm_lv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:descendantFocusability="afterDescendants"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

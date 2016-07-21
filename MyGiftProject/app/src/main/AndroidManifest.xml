@@ -20,6 +20,10 @@
         <activity android:name=".ui.activity.SecondaryJumpActivity"/>
         <activity android:name=".ui.activity.JumpWebActivity"/>
         <activity android:name=".ui.activity.JumpBabyDatailsActivity"/>
+        <activity android:name=".ui.activity.ClassifyJumpActivity"/>
+        <activity android:name=".ui.activity.StrategyColumnActivity"/>
+        <activity android:name=".ui.activity.SingleJumpActivity"/>
+        <activity android:name=".ui.activity.SearchActivity"/>
     </application>
 
 </manifest>
