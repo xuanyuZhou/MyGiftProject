@@ -6,7 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.ToggleButton;
 
 import com.example.dllo.mygiftproject.R;
 import com.example.dllo.mygiftproject.model.bean.GuideRollTitleBean;
@@ -25,7 +30,7 @@ import java.util.List;
  * Created by dllo on 16/7/11.
  * 指南页总fragment
  */
-public class GuideFragment extends AbsBaseFragment implements VolleyPort {
+public class GuideFragment extends AbsBaseFragment implements VolleyPort, CompoundButton.OnCheckedChangeListener {
 
     private String rollUrl = RunnableDocumentBean.TL_TITLE_URL;
     private List<Fragment> fragments;
@@ -35,6 +40,16 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
     // 标题栏第一个图标
     private ImageView guideTitleOneIv;
     private ImageView guideTitleSearch;
+    // 点击三角出菜单
+    private ToggleButton openBtn;
+    private GridLayout gridLayout;
+    private Button openBtn0, openBtn1, openBtn2, openBtn3, openBtn4, openBtn5, openBtn6, openBtn7, openBtn8, openBtn9, openBtn10,
+            openBtn11, openBtn12, openBtn13, openBtn14, openBtn15, openBtn16;
+    private Button[] buttons = {openBtn0, openBtn1, openBtn2, openBtn3, openBtn4, openBtn5, openBtn6, openBtn7, openBtn8, openBtn9, openBtn10,
+            openBtn11, openBtn12, openBtn13, openBtn14, openBtn15, openBtn16};
+    private Integer buttonIds[] = {R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8
+            , R.id.btn9, R.id.btn10, R.id.btn11, R.id.btn12, R.id.btn13, R.id.btn14, R.id.btn15, R.id.btn16};
+    private RelativeLayout openRl;
 
     @Override
     protected int setLayout() {
@@ -47,6 +62,13 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
         guideFmTabLayout = byView(R.id.guideFm_tabLayout);
         guideTitleOneIv = byView(R.id.guide_title_one);
         guideTitleSearch = byView(R.id.guide_title_search);
+        openBtn = byView(R.id.guide_tabOpenBtn);
+        gridLayout = byView(R.id.guide_gridLayout);
+        openRl = byView(R.id.openRl);
+        // 绑定gridView内的button
+        for (int i = 0; i < buttons.length; i++) {
+            buttons[i] = byView(buttonIds[i]);
+        }
     }
 
     @Override
@@ -66,6 +88,58 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
             @Override
             public void onClick(View v) {
                 goTo(context, SearchActivity.class);
+            }
+        });
+
+        openRl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (openBtn.isChecked()) {
+                    openBtn.setChecked(false);
+                    gridLayout.setVisibility(View.GONE);
+                } else {
+                    openBtn.setChecked(true);
+                    gridLayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        // 处理 tabLayout右侧小三角跟tabLayout联动相关代码
+        openBtn.setOnCheckedChangeListener(this);
+        for (int i = 0; i < buttons.length; i++) {
+            final int page = i;
+            buttons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guideFmViewpager.setCurrentItem(page,true);
+                    for (int i1 = 0; i1 < buttons.length; i1++) {
+                        buttons[i1].setBackgroundResource(R.drawable.tablayout_drawable);
+                        buttons[page].setBackgroundColor(Color.argb(200,255,182,193));
+                        gridLayout.setVisibility(View.GONE);
+                        openBtn.setChecked(false);
+                    }
+                }
+            });
+        }
+
+        // Viewpager的选中监听
+        guideFmViewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                for (int i1 = 0; i1 < buttons.length; i1++) {
+                    buttons[i1].setBackgroundResource(R.drawable.tablayout_drawable);
+                    buttons[position].setBackgroundColor(Color.argb(200,255,182,193));
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
 
@@ -104,7 +178,7 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
         guideFmVpAdapter.setTitle(rollTitleArray, fragments);
         guideFmViewpager.setAdapter(guideFmVpAdapter);
         guideFmTabLayout.setupWithViewPager(guideFmViewpager);
-        guideFmTabLayout.setTabTextColors(Color.BLACK,Color.RED);
+        guideFmTabLayout.setTabTextColors(Color.BLACK, Color.RED);
         guideFmTabLayout.setSelectedTabIndicatorColor(Color.RED);
         // viewPager设置懒加载模式 前16页不删除
         guideFmViewpager.setOffscreenPageLimit(16);
@@ -115,5 +189,18 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
     @Override
     public void stringFailure() {
         Log.d("GuideFragment", "网络请求失败");
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch (buttonView.getId()) {
+            case R.id.guide_tabOpenBtn:
+                if (isChecked) {
+                    gridLayout.setVisibility(View.VISIBLE);
+                } else {
+                    gridLayout.setVisibility(View.GONE);
+                }
+                break;
+        }
     }
 }

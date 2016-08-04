@@ -1,22 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <include layout="@layout/guide_item_title" />
 
-    <android.support.design.widget.TabLayout
-        android:background="#FFFFFF"
-        android:id="@+id/guideFm_tabLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/tabLayoutHeight" />
+        android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/guideFm_viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        <LinearLayout
+            android:id="@+id/guideLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/guideFm_tabLayout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/tabLayoutHeight"
+                android:layout_weight="1"
+                android:background="#FFFFFF" />
+            <RelativeLayout
+                android:id="@+id/openRl"
+                android:background="@android:color/white"
+                android:layout_width="50dp"
+                android:layout_height="match_parent">
+            <ToggleButton
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:textOff=""
+                android:textOn=""
+                android:background="@drawable/selector_tab_openbtn"
+                android:id="@+id/guide_tabOpenBtn"
+                android:layout_width="8dp"
+                android:layout_height="6dp"
+                android:src="@mipmap/ic_launcher" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/guideFm_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/guideLinearLayout" />
+        <GridLayout
+            android:id="@+id/guide_gridLayout"
+            android:visibility="gone"
+            android:background="@android:color/white"
+            android:layout_below="@id/guideLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            >
+            <Button
+                android:id="@+id/btn0"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="精选"/>
+            <Button
+                android:layout_columnWeight="1"
+                android:id="@+id/btn1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="送男票"/>
+            <Button
+                android:id="@+id/btn2"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="穿搭"/>
+            <Button
+                android:id="@+id/btn3"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="海淘"/>
+            <Button
+                android:id="@+id/btn4"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="礼物"/>
+            <Button
+                android:id="@+id/btn5"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="送闺蜜"/>
+            <Button
+                android:id="@+id/btn6"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="送爸妈"/>
+            <Button
+                android:id="@+id/btn7"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="送同事"/>
+            <Button
+                android:id="@+id/btn8"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="送基友"/>
+            <Button
+                android:id="@+id/btn9"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="送宝贝"/>
+            <Button
+                android:id="@+id/btn10"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="手工"/>
+            <Button
+                android:id="@+id/btn11"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="设计感"/>
+            <Button
+                android:id="@+id/btn12"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="创意生活"/>
+            <Button
+                android:id="@+id/btn13"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="文艺风"/>
+            <Button
+                android:id="@+id/btn14"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="科技范"/>
+            <Button
+                android:id="@+id/btn15"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="萌萌哒"/>
+            <Button
+                android:id="@+id/btn16"
+                android:layout_columnWeight="1"
+                android:background="@drawable/tablayout_drawable"
+                android:text="奇葩搞怪"/>
+
+        </GridLayout>
+    </RelativeLayout>
 
 </LinearLayout>
