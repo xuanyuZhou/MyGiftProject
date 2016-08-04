@@ -7,7 +7,6 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.dllo.mygiftproject.R;
 import com.example.dllo.mygiftproject.model.bean.GuideRollTitleBean;
@@ -15,6 +14,7 @@ import com.example.dllo.mygiftproject.model.bean.RunnableDocumentBean;
 import com.example.dllo.mygiftproject.model.net.VolleyInstance;
 import com.example.dllo.mygiftproject.model.net.VolleyPort;
 import com.example.dllo.mygiftproject.ui.activity.LoginActivity;
+import com.example.dllo.mygiftproject.ui.activity.SearchActivity;
 import com.example.dllo.mygiftproject.ui.adapter.GuideFmVpAdapter;
 import com.google.gson.Gson;
 
@@ -34,6 +34,7 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
     private TabLayout guideFmTabLayout;
     // 标题栏第一个图标
     private ImageView guideTitleOneIv;
+    private ImageView guideTitleSearch;
 
     @Override
     protected int setLayout() {
@@ -45,6 +46,7 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
         guideFmViewpager = byView(R.id.guideFm_viewPager);
         guideFmTabLayout = byView(R.id.guideFm_tabLayout);
         guideTitleOneIv = byView(R.id.guide_title_one);
+        guideTitleSearch = byView(R.id.guide_title_search);
     }
 
     @Override
@@ -58,7 +60,12 @@ public class GuideFragment extends AbsBaseFragment implements VolleyPort {
             @Override
             public void onClick(View v) {
                 goTo(getActivity(), LoginActivity.class);
-                Toast.makeText(context, "hahaha", Toast.LENGTH_SHORT).show();
+            }
+        });
+        guideTitleSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goTo(context, SearchActivity.class);
             }
         });
 

@@ -8,16 +8,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.dllo.mygiftproject.R;
+import com.example.dllo.mygiftproject.model.bean.GuideFirstRvBean;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 /**
  * Created by dllo on 16/7/13.
  * 指南页第一个fragment的recyclerView适配器
  */
 public class GuideFirstFmRvAdapter extends RecyclerView.Adapter<GuideFirstFmRvAdapter.GdFmRvHolder> {
-    private List<String> imageUrls;
+    private GuideFirstRvBean rvBean;
     private Context context;
     private GdFmRvOnclick gdFmRvOnclick;
 
@@ -25,8 +24,8 @@ public class GuideFirstFmRvAdapter extends RecyclerView.Adapter<GuideFirstFmRvAd
         this.context = context;
     }
 
-    public void setImageUrls(List<String> imageUrls) {
-        this.imageUrls = imageUrls;
+    public void setRvBean(GuideFirstRvBean rvBean) {
+        this.rvBean = rvBean;
         notifyDataSetChanged();
     }
 
@@ -45,7 +44,7 @@ public class GuideFirstFmRvAdapter extends RecyclerView.Adapter<GuideFirstFmRvAd
 
     @Override
     public void onBindViewHolder(final GdFmRvHolder holder, int position) {
-        Picasso.with(context).load(imageUrls.get(position)).into(holder.imageView);
+        Picasso.with(context).load(rvBean.getData().getSecondary_banners().get(position).getImage_url()).into(holder.imageView);
         // 添加rv监听事件
         if (gdFmRvOnclick != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +59,7 @@ public class GuideFirstFmRvAdapter extends RecyclerView.Adapter<GuideFirstFmRvAd
 
     @Override
     public int getItemCount() {
-        return imageUrls.size() != 0 ? imageUrls.size() : 0;
+        return rvBean != null ? rvBean.getData().getSecondary_banners().size() : 0;
     }
 
 

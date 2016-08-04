@@ -4,5 +4,6 @@
     <string name="hot_text">热门</string>
     <string name="classFiy_text">分类</string>
     <string name="my_text">我的</string>
+    <string name="searchEditText">  搜索单品、攻略</string>
 
 </resources>

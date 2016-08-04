@@ -14,7 +14,7 @@ import com.example.dllo.mygiftproject.ui.fragment.MyFragment;
  * 我的MainActivity
  */
 public class MainActivity extends AbsBaseActivity implements RadioGroup.OnCheckedChangeListener {
-    private RadioGroup mainRadioGroup;
+    private static RadioGroup mainRadioGroup;
     private GuideFragment guideFragment;
     private HotFragment hotFragment;
     private ClassifyFragment classifyFragment;
@@ -43,7 +43,9 @@ public class MainActivity extends AbsBaseActivity implements RadioGroup.OnChecke
     protected void initDatas() {
         // 默认进第一个radioButton
         mainRadioGroup.check(R.id.guide_radioButton);
-
+    }
+    public static void checkMy(){
+        mainRadioGroup.check(R.id.my_radioButton);
     }
 
     // radioGroup点击事件

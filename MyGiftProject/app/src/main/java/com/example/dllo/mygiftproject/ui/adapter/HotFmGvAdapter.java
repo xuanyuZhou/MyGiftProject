@@ -9,36 +9,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dllo.mygiftproject.R;
-import com.example.dllo.mygiftproject.model.bean.LocalHotFmGvBean;
+import com.example.dllo.mygiftproject.model.bean.HotFmGvBean;
 import com.example.dllo.mygiftproject.model.net.VolleyInstance;
-
-import java.util.List;
 
 /**
  * Created by dllo on 16/7/14.
  * 热门页fragment的gridView适配器
  */
 public class HotFmGvAdapter extends BaseAdapter {
-    private List<LocalHotFmGvBean> datas;
+    private HotFmGvBean datas;
     private Context context;
 
     public HotFmGvAdapter(Context context) {
         this.context = context;
     }
 
-    public void setDatas(List<LocalHotFmGvBean> datas) {
+    public void setDatas(HotFmGvBean datas) {
         this.datas = datas;
         notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return datas != null ? datas.size() : 0;
+        return datas != null ? datas.getData().getItems().size() : 0;
     }
 
     @Override
     public Object getItem(int position) {
-        return datas != null ? datas.get(position) : null;
+        return datas != null ? datas.getData().getItems().get(position) : null;
     }
 
     @Override
@@ -56,11 +54,10 @@ public class HotFmGvAdapter extends BaseAdapter {
         } else {
             holder = (HotFmGvHolder) convertView.getTag();
         }
-        LocalHotFmGvBean bean = datas.get(position);
-        holder.nameTv.setText(bean.getName());
-        holder.priceTv.setText(bean.getPrice());
-        holder.likesCountTv.setText(bean.getLikesCount());
-        VolleyInstance.getInstance(context).loaderImage(bean.getImageUrl(),holder.coverImgIv,context);
+        holder.nameTv.setText(datas.getData().getItems().get(position).getData().getName());
+        holder.priceTv.setText(String.valueOf(datas.getData().getItems().get(position).getData().getPrice()));
+        holder.likesCountTv.setText(String.valueOf(datas.getData().getItems().get(position).getData().getFavorites_count()));
+        VolleyInstance.getInstance(context).loaderImage(datas.getData().getItems().get(position).getData().getCover_image_url(),holder.coverImgIv,context);
         return convertView;
     }
 

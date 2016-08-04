@@ -12,23 +12,26 @@ import com.example.dllo.mygiftproject.R;
 import com.example.dllo.mygiftproject.model.bean.CiFmStrategyRvBean;
 import com.example.dllo.mygiftproject.model.net.SingleImageLoader;
 
-import java.util.List;
-
 /**
  * Created by dllo on 16/7/15.
  * 分类页 攻略 > 栏目 recyclerView适配器 数据直接用网络拉去
  */
 public class CiFmStrategyRvAdapter extends RecyclerView.Adapter<CiFmStrategyRvAdapter.StrategyRvHolder> {
-    private List<CiFmStrategyRvBean.DataBean.ColumnsBean> datas;
+    private CiFmStrategyRvBean datas;
     private Context context;
+    private GdFmRvOnclick gdFmRvOnclick;
 
     public CiFmStrategyRvAdapter(Context context) {
         this.context = context;
     }
 
-    public void setDatas(List<CiFmStrategyRvBean.DataBean.ColumnsBean> datas) {
+    public void setDatas(CiFmStrategyRvBean datas) {
         this.datas = datas;
         notifyDataSetChanged();
+    }
+
+    public void setGdFmRvOnclick(GdFmRvOnclick gdFmRvOnclick) {
+        this.gdFmRvOnclick = gdFmRvOnclick;
     }
 
     @Override
@@ -40,17 +43,26 @@ public class CiFmStrategyRvAdapter extends RecyclerView.Adapter<CiFmStrategyRvAd
     }
 
     @Override
-    public void onBindViewHolder(StrategyRvHolder holder, int position) {
-        CiFmStrategyRvBean.DataBean.ColumnsBean bean = datas.get(position);
-        holder.subTitleTv.setText(bean.getSubtitle());
-        holder.authorTv.setText(bean.getAuthor());
-        holder.titleTv.setText(bean.getTitle());
-        SingleImageLoader.loaderImage(bean.getBanner_image_url(),holder.contentImgIv,context);
+    public void onBindViewHolder(final StrategyRvHolder holder, int position) {
+        holder.subTitleTv.setText(datas.getData().getColumns().get(position).getSubtitle());
+        holder.authorTv.setText(datas.getData().getColumns().get(position).getAuthor());
+        holder.titleTv.setText(datas.getData().getColumns().get(position).getTitle());
+        SingleImageLoader.loaderImage(datas.getData().getColumns().get(position).getBanner_image_url(),holder.contentImgIv,context);
+        // 添加rv监听事件
+        if (gdFmRvOnclick != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = holder.getAdapterPosition(); // 获取位置
+                    gdFmRvOnclick.onClickListener(position); // 调取接口内方法参数为(位置)
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        return datas != null ? datas.size() : 0;
+        return datas != null ? datas.getData().getColumns().size() : 0;
     }
 
     class StrategyRvHolder extends RecyclerView.ViewHolder {

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFB6C1">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ff0033">
+        <ImageButton
+            android:id="@+id/ib_bannerGo_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/menu_action_back"
+            android:layout_margin="15dp"/>
+        <TextView
+            android:id="@+id/tv_bannerGo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫码"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"/>
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/btn_scanner"
+        android:text="点击扫描二维码"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/grade_btn_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:id="@+id/btn_build"
+        android:background="@drawable/grade_btn_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击生成二维码"/>
+    <EditText
+        android:id="@+id/et_input"
+        android:hint="   输入内容生成二维码"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/iv_output"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+</LinearLayout>

@@ -26,31 +26,41 @@
             android:background="@mipmap/icon_cellphone" />
 
         <EditText
+            android:id="@+id/userNameEd"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:hint="输入手机号" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        android:layout_marginRight="20dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
+        <!--密码登录框-->
+        <LinearLayout
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@mipmap/icon_password" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:hint="短信验证码" />
-    </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@mipmap/icon_password" />
 
+            <EditText
+                android:id="@+id/passWordEd"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:hint="密码" />
+        </LinearLayout>
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
@@ -61,12 +71,40 @@
         android:textColor="#ffffff"
         android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_ZhuCe"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
-        android:text="使用密码登录"
-        android:textColor="#FF8C9A" />
+        android:layout_margin="20dp"
+        android:background="#FF8C9A"
+        android:text="注册"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/registeredMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:gravity="right"
+            android:text="注册新用户"
+            android:textColor="#FF8C9A" />
+
+        <TextView
+            android:id="@+id/registeredPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:gravity="right"
+            android:text="使用密码登录"
+            android:textColor="#FF8C9A"
+            android:visibility="gone" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -98,18 +136,21 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/sinaBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="36dp"
             android:background="@mipmap/icon_log_sina" />
 
         <ImageButton
+            android:id="@+id/WxBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="36dp"
             android:background="@mipmap/icon_log_wechat" />
 
         <ImageButton
+            android:id="@+id/QqBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="36dp"

@@ -1,8 +1,6 @@
 package com.example.dllo.mygiftproject.ui.fragment;
 
 import android.graphics.Color;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -30,21 +28,7 @@ public class CiSingleFragment extends AbsBaseFragment implements VolleyPort {
     private ListView leftListView, rightListView;
     private CiSingleLeftLvAdapter leftLvAdapter;
     private CiSingleRightLvAdapter rightLvAdapter;
-    // 实验
-    private View clickSource,touchSource;
-    private int offset = 0;
-    private int pos;
-    private AbsListView.OnScrollListener scrollListener = new AbsListView.OnScrollListener() {
-        @Override
-        public void onScrollStateChanged(AbsListView view, int scrollState) {
-            pos = rightListView.getFirstVisiblePosition();
-        }
 
-        @Override
-        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-        }
-    };
 
     @Override
     protected int setLayout() {
@@ -61,30 +45,25 @@ public class CiSingleFragment extends AbsBaseFragment implements VolleyPort {
     protected void initDatas() {
         VolleyInstance.getInstance(context).startStringRequest(singleUrl, this);
 
-        rightListView.setOnScrollListener(scrollListener);
 
         /**
          * listView滑动事件  右侧listView滑动 左侧listView根据位置跳到相应位置
          */
-        rightListView.setOnTouchListener(new View.OnTouchListener() {
+        rightListView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Log.d("CiSingleFragment", "position:" + pos);
-                leftListView.setSelection(pos);
-                leftListView.setBackgroundColor(Color.TRANSPARENT);
-                leftLvAdapter.notifyDataSetInvalidated();
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
 
-//                if (touchSource == null) {
-//                    touchSource = v;
-//                }
-//                if (v == touchSource) {
-//                    leftListView.dispatchTouchEvent(event);
-//                    if (event.getAction() == MotionEvent.ACTION_UP) {
-//                        clickSource = v;
-//                        touchSource = null;
-//                    }
-//                }
-                return false;
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                for (int i = 0; i < leftListView.getChildCount(); i++) {
+                    if (i == firstVisibleItem) {
+                        leftListView.getChildAt(firstVisibleItem).setBackgroundColor(Color.WHITE);
+                    } else {
+                        leftListView.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
+                    }
+                }
             }
         });
 
@@ -119,7 +98,6 @@ public class CiSingleFragment extends AbsBaseFragment implements VolleyPort {
         rightLvAdapter = new CiSingleRightLvAdapter(context);
         rightLvAdapter.setDatas(titleDatas);
         rightListView.setAdapter(rightLvAdapter);
-
 
 
     }

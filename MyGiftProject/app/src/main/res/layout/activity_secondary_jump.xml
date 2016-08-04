@@ -20,12 +20,11 @@
 
         <TextView
             android:id="@+id/secondaryJump_titleTv"
-            android:layout_width="270dp"
-            android:layout_height="30dp"
+            android:layout_width="260dp"
+            android:layout_height="25dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center_horizontal"
-            android:text="夏日清凉,大作战"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
