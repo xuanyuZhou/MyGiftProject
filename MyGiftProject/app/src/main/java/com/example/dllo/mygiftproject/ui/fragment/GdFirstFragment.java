@@ -5,7 +5,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -49,8 +48,6 @@ public class GdFirstFragment extends AbsBaseFragment implements VolleyPort, Bann
     // 初始化gson
     private Gson gson;
     private GuideFirstLvBean lvBean;
-    //
-    private ImageView heart;
 
 
     @Override

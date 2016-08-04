@@ -1,5 +1,6 @@
 package com.example.dllo.mygiftproject.ui.activity;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,6 +20,8 @@ public class SearchActivity extends AbsBaseActivity implements View.OnClickListe
     private TextView textViewOne,textViewTwo,textViewThree,textViewFour,textViewFive,textViewSix,textViewSeven,textViewEight,textViewNight,textViewTen,textViewEleven,textViewTwelve;
     private ImageView onBack;
     private TextView goSearch;
+
+    private FragmentManager fragmentManager;
 
     @Override
     protected int setLayout() {
@@ -84,24 +87,32 @@ public class SearchActivity extends AbsBaseActivity implements View.OnClickListe
 
     private void parse(String newText){
         String s = null;
+        fragmentManager = getSupportFragmentManager();
         try {
             s = new String(newText.getBytes(),"UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
         String url = "http://api.liwushuo.com/v2/search/item?keyword="+s+"&limit=20&offset=0&sort=";
-        getSupportFragmentManager().
-                beginTransaction().replace
-                (R.id.searchActivity_frameLayout, SearchFragment.searchFragment(url)).commit();
+        SearchFragment searchFragment = SearchFragment.searchFragment(url);
+
+            fragmentManager.
+                    beginTransaction().add
+                    (R.id.searchActivity_frameLayout, searchFragment,"TAG").commit();
+
+
+
     }
 
     @Override
     protected void initDatas() {
-
+        // 搜索栏打开
+        searchView.setIconified(false);
     }
 
     @Override
     public void onClick(View v) {
+        String content;
         switch (v.getId()) {
             case R.id.searchActivity_back:
                 finish();
@@ -110,6 +121,8 @@ public class SearchActivity extends AbsBaseActivity implements View.OnClickListe
 
                 break;
             case R.id.searchActivity_textOne:
+                content = textViewOne.getText().toString();
+
                 break;
             case R.id.searchActivity_textTwo:
                 break;

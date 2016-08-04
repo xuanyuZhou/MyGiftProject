@@ -31,7 +31,6 @@ public class StrategyColumnActivity extends AbsBaseActivity implements VolleyPor
     private TextView titleContent;
     private ImageView onBack;
     // 透明标题栏效果 定义相关
-    // MyCustomScrollView
     private MyCustomScrollView scrollView;
     // 相对布局对象
     private RelativeLayout alphaRelativeLayout;
@@ -65,9 +64,9 @@ public class StrategyColumnActivity extends AbsBaseActivity implements VolleyPor
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                // 获取图片高度
-                titleImage.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                // 设置给我的对象
+//                // 获取图片高度
+//                titleImage.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+//                // 设置给我的对象
                 imageHeight = titleImage.getHeight();
 
                 scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {

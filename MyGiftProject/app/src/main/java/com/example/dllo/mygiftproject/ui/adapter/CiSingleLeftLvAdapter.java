@@ -29,6 +29,7 @@ public class CiSingleLeftLvAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+
     @Override
     public int getCount() {
         return datas != null ? datas.size() : 0;

@@ -1,6 +1,8 @@
 package com.example.dllo.mygiftproject.ui.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.GridView;
 
 import com.example.dllo.mygiftproject.R;
@@ -44,6 +46,11 @@ public class SearchFragment extends AbsBaseFragment implements VolleyPort {
     protected void initDatas() {
         Bundle bundle = getArguments();
         this.searchUrl = bundle.getString("url");
+        String noUrl = "http://api.liwushuo.com/v2/search/item?keyword=&limit=20&offset=0&sort=";
+        if (searchUrl.equals(noUrl)) {
+            Log.d("SearchFragment", "我被gone了");
+            searchFmGv.setVisibility(View.GONE);
+        }
         VolleyInstance.getInstance(context).startStringRequest(searchUrl,this);
     }
 

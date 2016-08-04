@@ -13,10 +13,13 @@ import android.widget.Toast;
 
 import com.example.dllo.mygiftproject.R;
 import com.example.dllo.mygiftproject.model.bean.SecondaryJumBean;
+import com.example.dllo.mygiftproject.model.net.ShareTool;
 import com.example.dllo.mygiftproject.model.net.VolleyInstance;
 import com.example.dllo.mygiftproject.model.net.VolleyPort;
 import com.example.dllo.mygiftproject.ui.adapter.SecondaryJumpLvAdapter;
 import com.google.gson.Gson;
+
+import cn.sharesdk.framework.ShareSDK;
 
 /**
  * Created by dllo on 16/7/18.
@@ -31,6 +34,7 @@ public class SecondaryJumpActivity extends AbsBaseActivity implements VolleyPort
     private TextView titleTv; // 上方的标题栏
     private PopupWindow popupWindow = new PopupWindow();
 
+
     @Override
     protected int setLayout() {
         return R.layout.activity_secondary_jump;
@@ -38,6 +42,7 @@ public class SecondaryJumpActivity extends AbsBaseActivity implements VolleyPort
 
     @Override
     protected void initView() {
+        ShareSDK.initSDK(this,"1542d974d25eb");
         jumpLv = byView(R.id.secondaryJump_lv);
         jumpBack = byView(R.id.secondaryJump_back);
         jumpShare = byView(R.id.secondaryJump_share);
@@ -89,8 +94,8 @@ public class SecondaryJumpActivity extends AbsBaseActivity implements VolleyPort
                 finish();
                 break;
             case R.id.secondaryJump_share:
-                showPopupWindow();
-                popupWindow.showAsDropDown(jumpShare,0,1100);
+                ShareTool.getShareTool(this).showShare(this,titleTv.getText().toString(),"我分享了" + titleTv.getText().toString(),
+                        "http://img3.imgtn.bdimg.com/it/u=2615525626,2902551747&fm=21&gp=0.jpg");
                 break;
         }
     }

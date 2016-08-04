@@ -20,6 +20,7 @@
                 android:background="@mipmap/icon_message" />
 
             <ImageButton
+                android:id="@+id/goScanner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/imageButton_setting"
@@ -35,17 +36,19 @@
                 android:background="@mipmap/me_settings" />
 
         </RelativeLayout>
-        <ImageButton
-            android:id="@+id/ib_mine_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/authorIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:background="@mipmap/me_avatar_girl" />
 
         <TextView
+            android:id="@+id/myFm_userTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ib_mine_icon"
+            android:layout_below="@id/authorIv"
             android:layout_centerInParent="true"
             android:layout_marginTop="5dp"
             android:text="未登录"
@@ -56,123 +59,118 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF">
-        <ImageButton
+
+        <ImageView
             android:id="@+id/ib_mine_cart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/icon_cart"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="50dp"/>
+            android:background="@mipmap/icon_cart" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="购物车"
             android:layout_below="@+id/ib_mine_cart"
-            android:layout_marginLeft="50dp"/>
-        <ImageButton
+            android:layout_marginLeft="50dp"
+            android:text="购物车" />
+
+        <ImageView
             android:id="@+id/ib_mine_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/icon_order"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ib_mine_cart"/>
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ib_mine_cart"
+            android:background="@mipmap/icon_order" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="订单"
             android:layout_below="@+id/ib_mine_order"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ib_mine_cart"/>
-        <ImageButton
+            android:layout_toRightOf="@+id/ib_mine_cart"
+            android:text="订单" />
+
+        <ImageView
             android:id="@+id/ib_mine_coupn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/icon_coupon"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ib_mine_order"/>
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ib_mine_order"
+            android:background="@mipmap/icon_coupon" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="礼券"
             android:layout_below="@+id/ib_mine_coupn"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ib_mine_order"/>
-        <ImageButton
+            android:layout_toRightOf="@+id/ib_mine_order"
+            android:text="礼券" />
+
+        <ImageView
             android:id="@+id/ib_mine_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/icon_service"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ib_mine_coupn"/>
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ib_mine_coupn"
+            android:background="@mipmap/icon_service" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="客服"
             android:layout_below="@+id/ib_mine_service"
             android:layout_marginLeft="50dp"
-            android:layout_toRightOf="@+id/ib_mine_coupn"/>
+            android:layout_toRightOf="@+id/ib_mine_coupn"
+            android:text="客服" />
     </RelativeLayout>
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:orientation="horizontal"
         android:layout_marginTop="5dp"
         android:background="@drawable/shape_mine"
-        >
+        android:orientation="horizontal">
+
         <RadioButton
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:button="@null"
-            android:text="单品"
-            android:textSize="15sp"
+            android:drawableBottom="#FF3E96"
             android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:drawableBottom="#FF3E96"/>
+            android:text="单品"
+            android:textSize="15sp" />
+
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
-            />
+            android:background="@android:color/darker_gray" />
+
         <RadioButton
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:button="@null"
-            android:text="攻略"
-            android:textSize="15sp"
             android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content" />
+            android:text="攻略"
+            android:textSize="15sp" />
 
     </RadioGroup>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@android:color/white">
-        <ImageButton
-            android:id="@+id/ib_mine_favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@mipmap/fav_me_blank"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="喜欢的都放这里哦"
-            android:layout_below="@+id/ib_mine_favorite"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="5dp"/>
 
-    </RelativeLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:background="@android:color/white">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/collection_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
-
 </LinearLayout>

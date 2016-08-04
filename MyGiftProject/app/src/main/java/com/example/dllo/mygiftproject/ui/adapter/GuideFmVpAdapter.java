@@ -32,7 +32,7 @@ public class GuideFmVpAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return fragments.size() > 0 ? fragments.size() : 0;
+        return fragments != null ? fragments.size() : 0;
     }
 
     @Override

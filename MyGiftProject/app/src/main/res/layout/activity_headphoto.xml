@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ee3d43">
+
+        <ImageView
+            android:id="@+id/head_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="24dp"
+            android:background="@mipmap/menu_action_back" />
+
+        <TextView
+            android:text="我的资料"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:id="@+id/guide_title_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_marginTop="15dp"
+        android:background="#cecece"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:id="@+id/change_headphoto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="更换头像"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:id="@+id/headphoto_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/me_avatar_girl"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</LinearLayout>
